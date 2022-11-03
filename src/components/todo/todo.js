@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useForm from '../../hooks/form.js';
 import './todo.scss';
+import TodoForm from '../TodoForm/index.js';
 
 import TodoResults from '../TodoResults';
 
@@ -44,69 +45,75 @@ const ToDo = () => {
   }, [list]);
 
   return (
-    <div className='todo-form'>
+    <>
       <header>
         <h1>To Do List: {incomplete} items pending</h1>
       </header>
+      <div className='todo'>
+        <TodoForm
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          defaultValues={defaultValues.difficulty}
+        />
+        <TodoResults list={list} />
 
-      <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
         <h2>Add To Do Item</h2>
-
+        
         <label>
-          <span>To Do Item</span>
-          <input
-            onChange={handleChange}
-            name='text'
-            type='text'
-            placeholder='Item Details'
-          />
+        <span>To Do Item</span>
+        <input
+        onChange={handleChange}
+        name='text'
+        type='text'
+        placeholder='Item Details'
+        />
         </label>
-
+        
         <label>
-          <span>Assigned To</span>
-          <input
-            onChange={handleChange}
-            name='assignee'
-            type='text'
-            placeholder='Assignee Name'
-          />
+        <span>Assigned To</span>
+        <input
+        onChange={handleChange}
+        name='assignee'
+        type='text'
+        placeholder='Assignee Name'
+        />
         </label>
-
+        
         <label>
-          <span>Difficulty</span>
-          <input
-            onChange={handleChange}
-            defaultValue={defaultValues.difficulty}
-            type='range'
-            min={1}
-            max={5}
-            name='difficulty'
-          />
+        <span>Difficulty</span>
+        <input
+        onChange={handleChange}
+        defaultValue={defaultValues.difficulty}
+        type='range'
+        min={1}
+        max={5}
+        name='difficulty'
+        />
         </label>
-
+        
         <label>
-          <button type='submit'>Add Item</button>
+        <button type='submit'>Add Item</button>
         </label>
-      </form>
+      </form> */}
 
-      <TodoResults list={list} />
-
-      {/* {list.map((item) => (
+        {/* {list.map((item) => (
         <div key={item.id}>
-          <p>{item.text}</p>
-          <p>
-            <small>Assigned to: {item.assignee}</small>
-          </p>
-          <p>
-            <small>Difficulty: {item.difficulty}</small>
-          </p>
-          <div onClick={() => toggleComplete(item.id)}>
-            Complete: {item.complete.toString()}
-          </div>
-          <hr />
+        <p>{item.text}</p>
+        <p>
+        <small>Assigned to: {item.assignee}</small>
+        </p>
+        <p>
+        <small>Difficulty: {item.difficulty}</small>
+        </p>
+        <div onClick={() => toggleComplete(item.id)}>
+        Complete: {item.complete.toString()}
+        </div>
+        <hr />
         </div>
       ))} */}
-    </div>
+      </div>
+    </>
   );
 };
 

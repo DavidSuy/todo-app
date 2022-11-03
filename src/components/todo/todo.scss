@@ -1,6 +1,8 @@
-.todo-form {
-  background-color: red;
-  header {
-    background-color: gray;
-  }
+.todo {
+  // background-color: red;
+  display: flex;
+  justify-content: space-between;
+}
+header {
+  background-color: gray;
 }
