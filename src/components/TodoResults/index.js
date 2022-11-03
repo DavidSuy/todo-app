@@ -12,10 +12,11 @@ export default function TodoResults(props) {
     >
       <div className='card-header'>
         <h5>{item.assignee}</h5>
+        <Button onClick={() => console.log('X clicked')}>X</Button>
       </div>
       <p>{item.text}</p>
       <p className='difficulty'>{`Difficulty: ${item.difficulty}`}</p>
     </Card>
   ));
-  return <>{results}</>;
+  return <div className='result-cards'>{results}</div>;
 }

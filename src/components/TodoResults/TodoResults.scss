@@ -1,16 +1,26 @@
 .card {
-  background-color: purple;
+  // background-color: purple;
   // margin-top: 0px;
   padding: 0px;
   h5 {
     padding: 10px;
-    border-bottom: solid lightgray;
+    margin: 0px;
+    // border-bottom: solid lightgray;
   }
 
 }
-.card-header {
-  background-color: green;
+
+.result-cards {
+  width: 50%;
 }
+
+.card-header {
+  // background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid lightgray;
+}
+
 .difficulty {
   text-align: right;
   padding: 10px;
