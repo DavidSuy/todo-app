@@ -2,6 +2,10 @@
 
 A Web Application for securely managing a To Do List
 
+## Deployment
+
+[App live deployment link](https://magnificent-malasada-f3a5c4.netlify.app/)
+
 ## Setup
 
     npm i
